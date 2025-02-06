@@ -1,12 +1,16 @@
-import { Button } from "@/components/ui/button"
+import { PlacesProvider } from "@/providers/PlacesProvider"
+import { MapProvider } from "@/providers/MapProvider"
+import { HomeScreen } from "@/screens/HomeScreen"
+
 import "./index.css"
 
 function App() {
   return (
-    <div className="bg-neutral-900">
-      <h1 className="text-red-500">Hello</h1>
-      <Button>Hey</Button>
-    </div>
+    <PlacesProvider>
+      <MapProvider>
+        <HomeScreen />
+      </MapProvider>
+    </PlacesProvider>
   )
 }
 
