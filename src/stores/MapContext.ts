@@ -1,9 +1,10 @@
 import { createContext } from "react";
-import { Map } from "maplibre-gl";
+import { Map, Marker } from "maplibre-gl";
 
 interface MapContext {
   isLoading: boolean;
   map?: Map;
+  markers: Marker[];
   setMap: (payload: Map) => void;
 }
 
