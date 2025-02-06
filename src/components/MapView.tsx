@@ -2,9 +2,9 @@ import { useContext, useLayoutEffect, useRef } from "react"
 import { Map } from 'maplibre-gl';
 
 import { PlacesContext } from "@/stores/PlacesContext";
-import { Loader } from "@/components/Loader";
-import { mapStyle } from "@/lib/mapStyle";
 import { MapContext } from "@/stores/MapContext";
+
+import { Loader } from "@/components/Loader";
 
 export const MapView = () => {
   const { isLoading, userLocation } = useContext(PlacesContext);
@@ -15,7 +15,7 @@ export const MapView = () => {
     if(!isLoading) {
       const map = new Map({
         container: mapDiv.current!,
-        style: mapStyle,
+        style: 'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
         center: userLocation,
         zoom: 16,
       });
